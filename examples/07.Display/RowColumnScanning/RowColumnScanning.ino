@@ -42,7 +42,7 @@ const int col[8] = {
 };
 
 // 2-dimensional array of pixels:
-int pixels[8][8];
+PinStatus pixels[8][8];
 
 // cursor position:
 int x = 5;
@@ -93,7 +93,7 @@ void refreshScreen() {
     // iterate over the cols (cathodes):
     for (int thisCol = 0; thisCol < 8; thisCol++) {
       // get the state of the current pixel;
-      int thisPixel = pixels[thisRow][thisCol];
+      PinStatus thisPixel = pixels[thisRow][thisCol];
       // when the row is HIGH and the col is LOW,
       // the LED where they meet turns on:
       digitalWrite(col[thisCol], thisPixel);
